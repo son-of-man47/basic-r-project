@@ -16,11 +16,12 @@ print(round(z))
 
 
 ##Q3 generate a random number and print your name the number of times
-# p <- runif(1, 1, 10)
-# d<- round(p)
-# name <- readline(prompt = 'enter your name: ')
-# name_n <- strtoi(name)
-# print(name_n * d)
+p <- sample(1:10, 1)
+print(p)
+name <- readline(prompt = 'enter your name: ')
+for(i in 1:p){
+  print(name)
+}
 
 
 ##Q4 generate a decimal and print it in 2 d.p
@@ -52,6 +53,14 @@ seconds <- as.integer(readline(prompt = 'enter seconds:  '))
 minutes <- round(seconds/60)
 sec<-  seconds  %% 60 
 print(paste(seconds, 'seconds is', minutes, 'min', sec, 'seconds', sep = ' '))
+
+
+##Q9
+current_hour <- as.numeric(readline(prompt = "Enter hour: "))
+future_hour <- as.numeric(readline(prompt = "How many hours ahead: "))
+z <- current_hour + future_hour
+future_time <- z %% 12
+print(paste("Future time is", future_time, "O'clock", sep = " "))
 
 
 ##Q11 convert from kilogram to pounds and rouund to the nearest tenth
@@ -103,6 +112,20 @@ if (l_cm < 0){
   l_in <- l_cm / 2.5
   print(paste(l_cm, 'cm in inches is', l_in, 'inches', sep =' '))
 }
+
+
+##Q2
+
+temp <- as.numeric(readline(prompt = "Enter temperature value: "))
+unit <- tolower(readline(prompt = "Enter unit(F/C): "))
+if (unit == 'f'){
+  celsius <- (5/9) * (temp - 32)
+  print(paste("The temperature value is ", celsius, "degrees celsius", sep = " "))
+} else if (unit == 'c'){
+  fahr <- (9/5) * (temp + 32)
+  print(paste("The temperature value is ", fahr, "degrees fahrenheit", sep = " "))
+}
+
 
 ##Q3
 
@@ -162,7 +185,7 @@ print(paste('sum of the divisors of', value, 'is', sum_divisors, sep = ' '))
 ### A perfect number is a number where the sum of the divisors except the number 
 ### is equal to the number E.g divisors of 6 are 3,2,1 and 3+2+1 = 6
 perfect_numbers = c()
-for ( k in 1:1000){
+for ( k in 1:10000){
   n = k
   i = 1
   s = 0
@@ -177,7 +200,6 @@ for ( k in 1:1000){
   }
 }
 print(perfect_numbers)
-k = k  + 1
 
 
 ##Q7 detectng a squarefree number
@@ -202,7 +224,7 @@ if(length(nsqn_div) == length(divisors)){
   print(paste(user, 'is not a sqaurefree number', sep = ' '))
 }
 
-##q8 swapping values of variables
+##Q8 swapping values of variables
 
 x = readline(prompt = 'enter value: ')
 y = readline(prompt = 'enter value: ')
@@ -216,6 +238,10 @@ y = z
 print(x)
 print(y)
 print(z)
+
+
+
+
 
 
 ##Q10
